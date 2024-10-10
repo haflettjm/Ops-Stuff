@@ -1,0 +1,25 @@
+---
+read: true
+instances:
+  - description: "Test CDKTF Instance"
+    machineType: "e2-micro"
+    zone: "us-central1-a"
+    name: "cdktf-instance01"
+    bootDisk:
+      autoDelete: true
+      initializeParams:
+        type: "pd-balanced"
+        image: "projects/ubuntu-cloud/global/images/ubuntu-2204-jammy-v20240927"
+        labels:
+          foo: bar
+        size: 20
+    networkInterface:
+    - network: "default"
+      accessConfig: []
+    metadata:
+      foo: bar
+    serviceAccount:
+      email: sa.email
+      scopes:
+      - "cloud-platform"
+
